@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require turbolinks
+//= require jquery-1.9.1
+//= require jquery-ui-1.10.3.custom
+//= require sync
 //= require_tree .

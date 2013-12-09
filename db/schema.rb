@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20131209180657) do
   end
 
   create_table "tokens", force: true do |t|
-    t.string   "type"
+    t.string   "name"
     t.integer  "x_coordinate"
     t.integer  "y_coordinate"
     t.string   "image"

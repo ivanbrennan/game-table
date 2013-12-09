@@ -1,4 +1,9 @@
 GameTable::Application.routes.draw do
+
+  root 'games#index'
+
+  post '/tokens/:id/move', :to => 'tokens#move'
+
   resources :games
 
   # The priority is based upon order of creation: first created -> highest priority.
