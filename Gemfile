@@ -51,6 +51,7 @@ gem 'pusher'
 gem 'sync'
 
 group :test, :development do
+  gem "pry"
   gem "seed_dump"
   gem "rspec-rails"
   gem "capybara"

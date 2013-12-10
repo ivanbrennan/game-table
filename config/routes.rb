@@ -2,7 +2,7 @@ GameTable::Application.routes.draw do
 
   root 'games#index'
 
-  post '/tokens/:id/move', :to => 'tokens#move'
+  post '/games/tokens/:id/move', :to => 'tokens#move'
 
   resources :games
 
