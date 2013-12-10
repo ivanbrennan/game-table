@@ -1,0 +1,13 @@
+<div class="token token<%= token.id %>">
+  <img src="<%= image_path(token.image) %>">
+
+  <script type="text/javascript">
+    $(function(){
+      $(".token<%= token.id %>").offset({
+        top: <%= token.y_coordinate %>,
+        left: <%= token.x_coordinate %>
+      });
+    });
+  </script>
+</div>
+

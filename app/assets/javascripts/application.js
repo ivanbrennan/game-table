@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-1.9.1
-//= require jquery-ui-1.10.3.custom
+//= require jquery.ui.all
 //= require sync
 //= require_tree .

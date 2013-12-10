@@ -1,7 +1,14 @@
 <img src="<%= image_path(@game.board.image) %>">
 
 <% @game.tokens.each do |token| %>
-  <div id="draggable" class="ui-widget-content">
-    <img src="<%= image_path(token.image) %>">
-  </div>
+  <%= sync partial: 'token', resource: token %>
 <% end %>
+
+
+<script>
+$(function() {
+  $(".token").draggable({
+    stop: function()
+  });
+});
+</script>

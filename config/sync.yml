@@ -8,7 +8,7 @@
 
 # Pusher
 development:
-  adapter_javascript_url: "http://js.pusher.com/2.0/pusher.min.js" 
+  adapter_javascript_url: "http://js.pusher.com/2.1/pusher.min.js" 
   app_id: "61276"
   api_key: "b6f51c0af0c7ee9c2d4a"
   auth_token: "1278709a24cc8b35384a"
