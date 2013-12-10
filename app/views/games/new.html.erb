@@ -1,0 +1,15 @@
+<h1>Create a New Game</h1>
+
+<%= form_for(@game) do |f| %>
+
+
+
+<%= f.submit "Create" %>
+
+
+<% end %>
+
+<br><br>
+<%= link_to 'Back', games_path %>
+
+<!-- add a select box once game type column is added so users can choose which board setup(chess, checkers, backgammon) -->

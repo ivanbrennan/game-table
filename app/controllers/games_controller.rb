@@ -9,6 +9,13 @@ class GamesController < ApplicationController
 
   end
 
+  def new
+    @game = Game.new
+  end
+
+  def create
+    @game = Game.create(game_params)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
