@@ -3,10 +3,3 @@
 <% @game.tokens.each do |token| %>
   <%= sync partial: 'token', resource: token %>
 <% end %>
-
-
-<script>
-$(function() {
-  $(".token").draggable();
-});
-</script>
