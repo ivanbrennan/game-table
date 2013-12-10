@@ -1,10 +1,10 @@
-updateclass TokensController < ApplicationController
+class TokensController < ApplicationController
   before_action :set_token, only: [:move]
   enable_sync only: [:move]
 
 
   def move
-    @token.update(token_params)
+    @token.update(:x_coordinate => params[:x_coordinate].to_i, :y_coordinate => params[:y_coordinate].to_i)
     sync_update @token
     redirect_to @token.game
   end
@@ -14,11 +14,6 @@ updateclass TokensController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
   def set_token
     @token = Token.find(params[:id])
-  end
-
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def token_params
-    params.require(:token).permit(:x_coordinate, :y_coordinate)
   end
 
 end

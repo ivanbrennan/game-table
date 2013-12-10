@@ -5,13 +5,13 @@ $(window).load(function(){
     $(this).offset({top: y, left: x});
   })
 
-  $(".token").draggable();
+  $(".token").draggable({});
+
   $(".token").on("dragstop", function(event, ui){
     var x = $(this).offset().left;
     var y = $(this).offset().top;
     var tokenId = $(this).data("id");
-    var valuesToSubmit = "?x_coordinate="+x+"&y_coordinate="+y
-    console.log(valuesToSubmit)
+    var valuesToSubmit = "x_coordinate=" + x + "&y_coordinate="+ y
     $.post("tokens/"+tokenId+"/move", valuesToSubmit, function(){})
   });
 });
