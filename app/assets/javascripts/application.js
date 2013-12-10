@@ -16,27 +16,17 @@
 //= require sync
 //= require_tree .
 
+$(window).load(function(){
 
-var __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  $(".token").draggable({});
 
-Sync.Token = (function(_super) {
-
-  __extends(Token, _super);
-
-  function Token() {
-    return Token.__super__.constructor.apply(this, arguments);
-  }
-
-  Token.prototype.afterInsert = function() {
-    this.$el.draggable();
-    var x = this.$el.data("x");
-    var y = this.$el.data("y");
-    console.log(x)
-    console.log(y)
-    return this.$el.offset({top: y, left: x});
-  };
-
-  return Token;
-
-})(Sync.View);
+  $(".token").on("dragstop", function(event, ui){
+    var x = $(this).offset().left;
+    var y = $(this).offset().top;
+    x > 0 ? x : x = 0;
+    y > 0 ? y : y = 0;
+    var tokenId = $(this).data("id");
+    var valuesToSubmit = "x_coordinate=" + x + "&y_coordinate="+ y
+    $.post("tokens/"+tokenId+"/move", valuesToSubmit, function(){})
+  });
+});

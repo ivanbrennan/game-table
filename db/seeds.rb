@@ -15,8 +15,30 @@ Game.create!([
 
 
 Token.create!([
-  { :name => "Circle", :x_coordinate => 100, :y_coordinate => 100, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-09 21:16:46", :updated_at => "2013-12-09 21:16:46" },
-  { :name => "Circle2", :x_coordinate => 200, :y_coordinate => 500, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-09 21:16:48", :updated_at => "2013-12-09 21:16:48" }
+  { :name => "Circle", :x_coordinate => 243, :y_coordinate => 169, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-09 21:16:46", :updated_at => "2013-12-10 16:06:34" },
+  { :name => "Circle2", :x_coordinate => 388, :y_coordinate => 16, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-09 21:16:48", :updated_at => "2013-12-10 16:01:10" },
+  { :name => nil, :x_coordinate => 235, :y_coordinate => 18, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-10 15:49:24", :updated_at => "2013-12-10 16:05:43" },
+  { :name => nil, :x_coordinate => 539, :y_coordinate => 18, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-10 15:49:31", :updated_at => "2013-12-10 15:55:55" },
+  { :name => nil, :x_coordinate => 387, :y_coordinate => 166, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-10 15:49:31", :updated_at => "2013-12-10 16:07:57" },
+  { :name => nil, :x_coordinate => 169, :y_coordinate => 95, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-10 15:49:32", :updated_at => "2013-12-10 16:06:32" },
+  { :name => nil, :x_coordinate => 89, :y_coordinate => 18, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-10 15:49:33", :updated_at => "2013-12-10 16:07:54" },
+  { :name => nil, :x_coordinate => 465, :y_coordinate => 88, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-10 15:49:33", :updated_at => "2013-12-10 16:00:54" },
+  { :name => nil, :x_coordinate => 312, :y_coordinate => 92, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-10 15:49:34", :updated_at => "2013-12-10 16:03:58" },
+  { :name => nil, :x_coordinate => 12, :y_coordinate => 94, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-10 15:49:34", :updated_at => "2013-12-10 16:06:30" },
+  { :name => nil, :x_coordinate => 88, :y_coordinate => 169, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-10 15:49:35", :updated_at => "2013-12-10 15:53:06" },
+  { :name => nil, :x_coordinate => 463, :y_coordinate => 538, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:04", :updated_at => "2013-12-10 15:52:48" },
+  { :name => nil, :x_coordinate => 313, :y_coordinate => 537, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:07", :updated_at => "2013-12-10 15:52:45" },
+  { :name => nil, :x_coordinate => 313, :y_coordinate => 390, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:08", :updated_at => "2013-12-10 16:06:43" },
+  { :name => nil, :x_coordinate => 162, :y_coordinate => 389, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:09", :updated_at => "2013-12-10 16:06:46" },
+  { :name => nil, :x_coordinate => 386, :y_coordinate => 467, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:09", :updated_at => "2013-12-10 16:08:00" },
+  { :name => nil, :x_coordinate => 536, :y_coordinate => 464, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:10", :updated_at => "2013-12-10 15:52:52" },
+  { :name => nil, :x_coordinate => 238, :y_coordinate => 467, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:11", :updated_at => "2013-12-10 15:50:57" },
+  { :name => nil, :x_coordinate => 166, :y_coordinate => 542, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:11", :updated_at => "2013-12-10 15:50:54" },
+  { :name => nil, :x_coordinate => 16, :y_coordinate => 539, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:12", :updated_at => "2013-12-10 15:50:51" },
+  { :name => nil, :x_coordinate => 90, :y_coordinate => 466, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:12", :updated_at => "2013-12-10 15:50:48" },
+  { :name => nil, :x_coordinate => 459, :y_coordinate => 390, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:13", :updated_at => "2013-12-10 16:06:38" },
+  { :name => nil, :x_coordinate => 17, :y_coordinate => 395, :image => "test2.png", :game_id => 1, :created_at => "2013-12-10 15:50:14", :updated_at => "2013-12-10 15:50:46" },
+  { :name => nil, :x_coordinate => 538, :y_coordinate => 165, :image => "test_token.png", :game_id => 1, :created_at => "2013-12-10 16:07:36", :updated_at => "2013-12-10 16:07:52" }
 ])
 
 
