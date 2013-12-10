@@ -1,5 +1,5 @@
 <% @games.each do |game| %>
-  <%= link_to game.name, game %>
+  <%= link_to game.name, gamez_path(game.secure_room_code) %>
 <% end %>
 
 <br><br><div><%= link_to "Play a New Game", new_game_path %><div>

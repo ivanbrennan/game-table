@@ -20,12 +20,12 @@ class GamesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
-      @game = Game.find(params[:id])
+      @game = Game.find_by(secure_room_code: params[:secure_room_code])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:name)
+      params.require(:game).permit(:name, :secure_room_code)
     end
 
 end

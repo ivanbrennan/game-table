@@ -4,14 +4,14 @@
 
 Board.create!([
   { :image => "test_board.jpg", :game_id => 1, :created_at => "2013-12-09 21:17:57", :updated_at => "2013-12-09 21:17:57" },
-  { :image => "backgammon_board.jpg", :game_id => 2, :created_at => "2013-12-10 16:57:09", :updated_at => "2013-12-10 16:57:09" }
+  { :image => "backgammon_board.jpg", :game_id => 2, :created_at => "2013-12-10 16:57:09", :updated_at => "2013-12-10 16:57:09"}
 ])
 
 
 
 Game.create!([
-  { :name => "Test", :created_at => "2013-12-09 21:16:28", :updated_at => "2013-12-09 21:16:28" },
-  { :name => "backgammon", :created_at => "2013-12-10 16:57:50", :updated_at => "2013-12-10 16:57:50" }
+  { :name => "Test", :created_at => "2013-12-09 21:16:28", :updated_at => "2013-12-09 21:16:28", :secure_room_code => Game.secure_room_code },
+  { :name => "backgammon", :created_at => "2013-12-10 16:57:50", :updated_at => "2013-12-10 16:57:50", :secure_room_code => Game.secure_room_code }
 ])
 
 

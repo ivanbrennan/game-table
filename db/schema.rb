@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20131209180657) do
 
   create_table "games", force: true do |t|
     t.string   "name"
+    t.string   "secure_room_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
