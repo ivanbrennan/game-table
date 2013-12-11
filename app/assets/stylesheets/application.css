@@ -9,10 +9,23 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap.min
+ *= require animate.min
+ *= require font-awesome.min
+ *= require forms
  *= require_self
  *= require jquery.ui.all
  *= require_tree .
  */
+
+ /*font*/
+ @font-face {
+ font-family: 'Glyphicons Halflings';
+ src: asset-url('glyphicons-halflings-regular.eot');
+ src: asset-url('glyphicons-halflings-regular.eot') format('embedded-opentype'), 
+      asset-url('glyphicons-halflings-regular.woff') format('woff'), 
+      asset-url('glyphicons-halflings-regular.ttf') format('truetype'), 
+      asset-url('glyphicons-halflings-regular.svg') format('svg');
+}
 
  /*index page customization*/
 .index-total {
@@ -23,6 +36,46 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.forgot-password-section {
+  border-radius: 4px;
+}
+
+.about-p {
+  padding-top: 10px;
+}
+
+.input-group {
+  text-align: center;
+}
+
+.input-group a {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.btn {
+  border-radius: 4px;
+  text-align: center;
+
+}
+
+.section-title {
+  background-color: rgba(245, 245, 245, 1) !important;
+  border-radius: 5px;
+  margin-bottom: -15px;
+  padding-top: 20px;
+}
+
+.section-title h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.forgot-content {
+  background-color: rgba(245, 245, 245, 1) !important;
+  border-radius: 4px !important;
 }
 
 /*loading page before table top shows*/
@@ -131,8 +184,12 @@ input {
   height: 60px;
   clear: both;
   padding-top: 20px;
-  background-color: white;
+  background-color: rgba(245, 245, 245, 1);
   width: 100%;
+}
+
+.footer-text {
+  color: #8F9E9F;
 }
 
 .twitter {
@@ -140,7 +197,7 @@ input {
 }
 
 .footer a {
-  color: #83AF9B;
+  color: #5CB85C;
 }
 
 .footer-links {
@@ -149,6 +206,5 @@ input {
 }
 
 a:hover {
-  text-decoration: none;
-  color: #5CB85C;
+  text-decoration: underline;
 }
