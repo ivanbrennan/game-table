@@ -11,6 +11,9 @@ GameTable::Application.routes.draw do
   resources :games, except: [:show, :new]
   post '/games/messages/:secure_room_code', :to => 'messages#create', :as => 'messages'
 
+  get '/about' => 'static_pages#about'
+  get '/contact' => 'static_pages#contact'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

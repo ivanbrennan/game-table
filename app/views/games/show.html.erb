@@ -1,6 +1,12 @@
-<div class="main-area">
+<div class="loading-box">
+  <h1>Loading...</h1>
+</div>
 
-  <%= link_to "Reset Game", reset_path(@game.secure_room_code), :class => "menu"%>
+<div class="main-area">
+  <div class="menu">
+    <%= link_to "Reset Game", reset_path(@game.secure_room_code) %>
+    <%= link_to "Home", root_path %>
+  </div>
 
   <div class="chat">
     <h3>Chat</h3>

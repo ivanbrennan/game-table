@@ -9,15 +9,7 @@ class Game < ActiveRecord::Base
   end
 
   def reset
-    case self.name
-    when "checkers"
-      reset_checkers
-    when "backgammon"
-      reset_backgammon
-    when "chess"
-      reset_chess
-    end
-
+    send("reset_#{self.name}")
   end
 
   def reset_checkers
