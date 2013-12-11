@@ -1,28 +1,39 @@
 <div class="index-total">
 
-  <div class="games ongoing">
+<!--   <div class="games ongoing">
     <h2>Ongoing games</h2>
     <ul>
-      <% @games.each do |game| %>
-        <li><%= link_to game.name, game_path(game.secure_room_code) %></li><br>
-      <% end %>
+      <%# @games.each do |game| %>
+        <li><%#= link_to game.name, game_path(game.secure_room_code) %></li><br>
+      <%# end %>
     </ul>
-  </div>=
+  </div> -->
 
-
-  <div class="games from_template">
-    <h2>Start a new game</h2>
-      <%= link_to "Play Checkers", checkers_path, class: "btn btn-success btn-lg" %>
-      <br>
-      <%= link_to "Play Chess", chess_path, class: "btn btn-success btn-lg" %>
-      <br>
-      <%= link_to "Play Backgammon", backgammon_path, class: "btn btn-success btn-lg" %>
+<div class="eternity-form white">
+  <div class="forgot-password-section animated fadeInDown">
+    <div class="section-title"><h1>Game Table</h1></div>
+      <div class="forgot-content">
+        <form>
+        <div class="textbox-wrap">
+          <div class="input-group input-group-lg col-lg-12">
+            <p class="about-p"><strong>Game Table</strong> is a table top gaming platform that lets you play classic board games. Generate a new game and invite your friends to play!</p>
+          </div>
+        </div>
+        <div class="forgot-form-action clearfix">
+          <div class="input-group input-group-lg col-lg-12">
+            <%= link_to "Checkers", checkers_path, class: "btn btn-success btn-lg" %><br>
+            <%= link_to "Chess", chess_path, class: "btn btn-success btn-lg" %><br>
+            <%= link_to "Backgammon", backgammon_path, class: "btn btn-success btn-lg" %>
+          </div>
+        </div>
+      </form>
+      </div>
   </div>
 </div>
 
 <footer class="footer" role="contentinfo">
     <div class="nav navbar-nav twitter">
-      <span>Built with ♥ by 
+      <span class="footer-text">Built with ♥ by 
         <a href="https://twitter.com/j_scag_" target="_blank">@j_scag_</a>,
         <a href="https://twitter.com/jamesjtong" target="_blank">@jamesjtong</a>,
         <a href="https://twitter.com/ivanbrennan" target="_blank">@ivanbrennan</a>,
