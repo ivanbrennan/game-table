@@ -7,8 +7,8 @@ GameTable::Application.routes.draw do
   post '/games/tokens/:id/move', :to => 'tokens#move'
   get  '/games/:secure_room_code' => 'games#show', :as => "game"
 
-  resources :games, except: [:show]
-  
+  resources :games, except: [:show, :new]
+  post '/games/messages/:secure_room_code', :to => 'messages#create', :as => 'messages'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

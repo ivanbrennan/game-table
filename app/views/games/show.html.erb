@@ -4,4 +4,22 @@
   <%= sync partial: 'token', resource: token %>
 <% end %>
 
+
 <%= link_to "Reset Game", reset_path(@game.secure_room_code)%>
+
+<div>
+  <h3>Chat</h3>
+
+  <ul id="chat">
+    <% @game.messages.each do |message| %>
+      <%= sync partial: 'message', resource: message %>
+    <% end %>
+    <%= sync_new partial: 'message', resource: Message.new, scope: @game %>
+  </ul>
+
+  <%= form_for Message.new, :remote => true do |f| %>
+    <%= f.text_field :content %>
+    <%= f.submit "Send" %>
+  <% end %>
+</div>
+
