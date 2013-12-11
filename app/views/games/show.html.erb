@@ -4,6 +4,9 @@
   <%= sync partial: 'token', resource: token %>
 <% end %>
 
+
+<%= link_to "Reset Game", reset_path(@game.secure_room_code)%>
+
 <div>
   <h3>Chat</h3>
 
@@ -19,3 +22,4 @@
     <%= f.submit "Send" %>
   <% end %>
 </div>
+
