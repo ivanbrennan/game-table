@@ -31,16 +31,15 @@ $(window).load(function(){
   });
 
   $("form").submit(function(){
-    console.log("submit function activated");
     var formData = $(".new_message").serialize();
 
     $.post($(".new_message").attr("action"), formData, function(){
-      console.log("post function activated");
       $("#message_content").val("");
+      $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
     });
   return false;
   });
 
   $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
-
+  
 });

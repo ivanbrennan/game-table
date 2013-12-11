@@ -11,5 +11,5 @@ ul {
   border: solid black 1px; /*for now*/
   max-height: 500px;
   width: 300px;
-  overflow: auto;
+  overflow-y: scroll;
 }
