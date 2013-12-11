@@ -53,5 +53,12 @@ $(window).load(function(){
   });
 
   $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
+
+  $('#message_content').keypress(function(e){
+    if(e.keyCode == 13) {
+     e.preventDefault();
+     $("form").submit();
+    }
+  });
   
 });
