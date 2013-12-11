@@ -16,51 +16,65 @@
 //= require sync
 //= require_tree .
 
-$(window).load(function(){
+$(document).ready(function(){
 
-  $(function(){
-    //get size of image
-    var boardHeight = $('.board img').height();
-    var boardWidth = $('.board img').width();
-    //set size of board div
-    $(".board").height(boardHeight);
-    $(".board").width(boardWidth);
-    $(".main-area").css({"min-width": boardWidth});
-  });
+  $(window).load(function(){
 
-  $(".board").mousedown(function(){
+    $(".loading-box").fadeOut('slow');
+    $(".main-area").fadeIn('slow');
+
+    $(function(){
+      //get size of image
+      var boardHeight = $('.board img').height();
+      var boardWidth = $('.board img').width();
+      //set size of board div
+      $(".board").height(boardHeight);
+      $(".board").width(boardWidth);
+      $(".main-area").css({"min-width": boardWidth});
+    });
+
+    $(".board").mousedown(function(){
+      return false;
+    });
+
+    $(".token").draggable({ containment: ".tabletop" });
+
+    $(".token").on("dragstop", function(event, ui){
+      var x = $(this).position().left;
+      var y = $(this).position().top;
+      var tokenId = $(this).data("id");
+      var valuesToSubmit = "x_coordinate=" + x + "&y_coordinate="+ y;
+      $.post("tokens/"+tokenId+"/move", valuesToSubmit, function(){});
+    });
+
+
+    $(".dice-roll a").click(function(){
+      var name = $("#message_name").val(); 
+
+      $.post($(".dice-roll a").attr("href"), "name="+name, function(){
+        $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
+      });
     return false;
-  });
-
-  $(".token").draggable({ containment: ".tabletop" });
-
-  $(".token").on("dragstop", function(event, ui){
-    var x = $(this).position().left;
-    var y = $(this).position().top;
-    var tokenId = $(this).data("id");
-    var valuesToSubmit = "x_coordinate=" + x + "&y_coordinate="+ y;
-    $.post("tokens/"+tokenId+"/move", valuesToSubmit, function(){});
-  });
-
-  $("form").submit(function(){
-    var formData = $(".new_message").serialize();
-
-    $.post($(".new_message").attr("action"), formData, function(){
-      $("#message_content").val("");
-      $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
     });
-  return false;
-  });
 
-  $(".dice-roll a").click(function(){
-    var name = $("#message_name").val(); 
+    $("form").submit(function(){
+      var formData = $(".new_message").serialize();
 
-    $.post($(".dice-roll a").attr("href"), "name="+name, function(){
-      $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
+      $.post($(".new_message").attr("action"), formData, function(){
+        $("#message_content").val("");
+        $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
+      });
+    return false;
     });
-  return false;
-  });
 
-  $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
-  
+    $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
+
+    $('#message_content').keypress(function(e){
+      if(e.keyCode == 13) {
+       e.preventDefault();
+       $("form").submit();
+      }
+    });
+    
+  });
 });
