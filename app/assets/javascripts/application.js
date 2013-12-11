@@ -13,6 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
+//= require bootstrap.min
+//= require jquery.icheck.min
+//= require modernizr
+//= require placeholders.min
+//= require respond.min
+//= require Chart.min
 //= require sync
 //= require_tree .
 
