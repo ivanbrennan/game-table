@@ -19,8 +19,8 @@
 
   <div>
     <%= form_for Message.new do |f| %>
-      <%= f.text_field :name %>
-      <%= f.text_field :content %>
+      <%= f.text_field :name, :placeholder => "Screen name" %>
+      <%= f.text_field :content, :placeholder => "Message" %>
       <%= f.submit "Send" %>
     <% end %>
   </div>
