@@ -1,3 +1,4 @@
 <div class="token token<%= token.id %>" data-id="<%=token.id%>" style="position: absolute; top: <%= token.y_coordinate %>px; left: <%= token.x_coordinate %>px">
-  <img src="<%= image_path(token.state_img) %>">
+  <img src="<%= image_path(token.img_shown) %>">
+  <img src="<%= image_path(token.img_hidden) %>">
 </div>

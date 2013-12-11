@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131211215728) do
+ActiveRecord::Schema.define(version: 20131211232956) do
 
   create_table "boards", force: true do |t|
     t.string   "image"
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20131211215728) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_1"
-    t.string   "image_2"
     t.integer  "state"
+    t.string   "image_0"
   end
 
 end

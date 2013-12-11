@@ -66,23 +66,10 @@ $(document).ready(function(){
       }
     });
 
-    $(".token").dblclick( handler(eventObject) )
-    //$(".token").onclick(doubleClick(this, function(){alert('single')}, function(){alert('double')}))
-
-    //function doubleclick(el, onsingle, ondouble) {
-    //    if (el.getAttribute("data-dblclick") == null) {
-    //        el.setAttribute("data-dblclick", 1);
-    //        setTimeout(function () {
-    //            if (el.getAttribute("data-dblclick") == 1) {
-    //                onsingle();
-    //            }
-    //            el.removeAttribute("data-dblclick");
-    //        }, 200);
-    //    } else {
-    //        el.removeAttribute("data-dblclick");
-    //        ondouble();
-    //    }
-    //}
+    $(".token").on("dblclick", function(event, ui){
+      console.log("dblclicked");
+      $(this).toggle();
+    });
 
   });
 });
