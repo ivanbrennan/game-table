@@ -2,7 +2,6 @@
 
 
   <div class="chat">
-    <h3>Chat</h3>
     <div class="messages-box">
       <ul id="chat">
         <% @game.messages.each do |message| %>
@@ -15,7 +14,7 @@
     <div class="message-input">
       <%= form_for Message.new do |f| %>
         <%= f.text_field :name, :placeholder => "Screen name" %>
-        <%= f.text_area :content, :size => "32x4" %>
+        <%= f.text_area :content, :size => "28x4" %>
         <%= f.submit "Send" %>
       <% end %>
     </div>
