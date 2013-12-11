@@ -10,7 +10,7 @@ Board.create!([
 
 
 Game.create!([
-  { :name => "Test", :created_at => "2013-12-09 21:16:28", :updated_at => "2013-12-09 21:16:28", :secure_room_code => Game.secure_room_code },
+  { :name => "checkers", :created_at => "2013-12-09 21:16:28", :updated_at => "2013-12-09 21:16:28", :secure_room_code => Game.secure_room_code },
   { :name => "backgammon", :created_at => "2013-12-10 16:57:50", :updated_at => "2013-12-10 16:57:50", :secure_room_code => Game.secure_room_code }
 ])
 
