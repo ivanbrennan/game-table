@@ -7,20 +7,21 @@
 
 <%= link_to "Reset Game", reset_path(@game.secure_room_code)%>
 
-<div>
+<div class="messages-div">
   <h3>Chat</h3>
-
-  <ul id="chat">
-    <% @game.messages.each do |message| %>
-      <%= sync partial: 'message', resource: message %>
-    <% end %>
-    <%= sync_new partial: 'message', resource: Message.new, scope: @game %>
-  </ul>
+  <div class="messages-box">
+    <ul id="chat">
+      <% @game.messages.each do |message| %>
+        <%= sync partial: 'message', resource: message %>
+      <% end %>
+      <%= sync_new partial: 'message', resource: Message.new, scope: @game %>
+    </ul>
+  </div>
 
   <div>
     <%= form_for Message.new do |f| %>
-      <%= f.text_field :name %>
-      <%= f.text_field :content %>
+      Your name: <%= f.text_field :name %><br>
+      Message: <%= f.text_field :content %><br>
       <%= f.submit "Send" %>
     <% end %>
   </div>
