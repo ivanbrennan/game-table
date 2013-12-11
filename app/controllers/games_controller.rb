@@ -3,7 +3,14 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
+
   end
+
+  def checkers 
+    @checkers = GameBuilder.build_checkers
+    redirect_to game_path(@checkers.secure_room_code)
+  end
+
 
   def show
 
@@ -11,6 +18,7 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
+
   end
 
   def create
