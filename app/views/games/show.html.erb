@@ -4,7 +4,6 @@
   <%= sync partial: 'token', resource: token %>
 <% end %>
 
-
 <%= link_to "Reset Game", reset_path(@game.secure_room_code)%>
 
 <div class="messages-div">
@@ -27,4 +26,6 @@
   </div>
 </div>
 
-
+<div>
+  <%= link_to "Back to Games", games_path %>
+</div>
