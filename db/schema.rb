@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131211154726) do
+ActiveRecord::Schema.define(version: 20131211215728) do
 
   create_table "boards", force: true do |t|
     t.string   "image"
@@ -42,10 +42,12 @@ ActiveRecord::Schema.define(version: 20131211154726) do
     t.string   "name"
     t.integer  "x_coordinate"
     t.integer  "y_coordinate"
-    t.string   "image"
     t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_1"
+    t.string   "image_2"
+    t.integer  "state"
   end
 
 end
