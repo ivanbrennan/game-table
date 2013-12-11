@@ -3,7 +3,7 @@ GameTable::Application.routes.draw do
   root 'games#index'
 
   get '/games/checkers' => "games#checkers", :as => "checkers"
-
+  get '/games/backgammon' => "games#backgammon", :as => "backgammon"
   post '/games/tokens/:id/move', :to => 'tokens#move'
   get  '/games/:secure_room_code' => 'games#show', :as => "game"
   resources :games, except: [:show]

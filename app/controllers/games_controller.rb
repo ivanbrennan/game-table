@@ -11,6 +11,10 @@ class GamesController < ApplicationController
     redirect_to game_path(@checkers.secure_room_code)
   end
 
+  def backgammon
+    @backgammon = GameBuilder.build_backgammon
+    redirect_to game_path(@backgammon.secure_room_code)
+  end
 
   def show
 
