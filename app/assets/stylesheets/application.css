@@ -12,3 +12,47 @@
  *= require jquery.ui.all
  *= require_tree .
  */
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main-area {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.tabletop {
+  height: 80%;
+  width: 80%;
+  background: green;
+  background-image:url('green_felt.jpg');
+  overflow: scroll;
+  vertical-align: center;
+  text-align: center;
+}
+
+.board {
+  height: 100%;
+  width: auto;
+  overflow: scroll;
+}
+
+.tabletop img {
+  vertical-align: bottom;
+}
+
+.token {
+  height: 100px;
+  width: 100px;
+}
+
+.chat {
+  position: fixed;
+  width: 20%;
+  background-color: grey;
+}
