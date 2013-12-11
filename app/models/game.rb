@@ -14,7 +14,10 @@ class Game < ActiveRecord::Base
       reset_checkers
     when "backgammon"
       reset_backgammon
+    when "chess"
+      reset_chess
     end
+
   end
 
   def reset_checkers
@@ -24,6 +27,12 @@ class Game < ActiveRecord::Base
   end
 
   def reset_backgammon
+    self.tokens.each do |token|
+      token.update(x_coordinate: 0, y_coordinate: 0)
+    end
+  end
+
+  def reset_chess
     self.tokens.each do |token|
       token.update(x_coordinate: 0, y_coordinate: 0)
     end

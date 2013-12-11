@@ -3,6 +3,7 @@
 <% @games.each do |game| %>
   <li><%= link_to game.name, game_path(game.secure_room_code) %></li>
 <% end %>
+
 </div>
 
 
@@ -10,6 +11,10 @@
   <h2>Start a new game</h2>
 <%= link_to "Play Checkers", checkers_path %>
 
+<br>
+<%= link_to "Play Checkers", checkers_path %>
+<br>
+<%= link_to "Play Chess", chess_path %>
 <br>
 <%= link_to "Play Backgammon", backgammon_path %>
 </div>
