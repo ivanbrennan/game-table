@@ -1,27 +1,27 @@
-<div class="games ongoing">
-  <h2>Ongoing games</h2>
-  <ul>
-    <% @games.each do |game| %>
-      <li><%= link_to game.name, game_path(game.secure_room_code) %></li><br>
-    <% end %>
-  </ul>
-</div>
+<div class="index-total">
+
+  <div class="games ongoing">
+    <h2>Ongoing games</h2>
+    <ul>
+      <% @games.each do |game| %>
+        <li><%= link_to game.name, game_path(game.secure_room_code) %></li><br>
+      <% end %>
+    </ul>
+  </div>=
 
 
-<div class="games from_template">
-  <h2>Start a new game</h2>
-    <%= link_to "Play Checkers", checkers_path %>
-    <br>
-    <%= link_to "Play Chess", chess_path %>
-    <br>
-    <%= link_to "Play Backgammon", backgammon_path %>
+  <div class="games from_template">
+    <h2>Start a new game</h2>
+      <%= link_to "Play Checkers", checkers_path, class: "btn btn-success btn-lg" %>
+      <br>
+      <%= link_to "Play Chess", chess_path, class: "btn btn-success btn-lg" %>
+      <br>
+      <%= link_to "Play Backgammon", backgammon_path, class: "btn btn-success btn-lg" %>
+  </div>
 </div>
 
 <footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="bs-social">
-    </div>
-    <div class="nav navbar-nav">
+    <div class="nav navbar-nav twitter">
       <span>Built with ♥ by 
         <a href="https://twitter.com/j_scag_" target="_blank">@j_scag_</a>,
         <a href="https://twitter.com/jamesjtong" target="_blank">@jamesjtong</a>,
