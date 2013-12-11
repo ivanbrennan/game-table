@@ -28,6 +28,10 @@ input {
   width: 240px;
 }
 
+textarea {
+  resize: none    ;
+}
+
 .main-area {
   margin: 0;
   width: 100%;
