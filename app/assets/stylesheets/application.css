@@ -17,29 +17,30 @@ html, body {
   margin: 0;
   width: 100%;
   height: 100%;
+  min-height: 100%;
 }
 
 .main-area {
   margin: 0;
   width: 100%;
   height: 100%;
-  overflow: scroll;
+  min-height: 100%;
 }
 
 .tabletop {
-  height: 80%;
-  width: 80%;
-  background: green;
-  background-image:url('green_felt.jpg');
+  width: auto;
+  height: 100%;
+  margin-right: 250px;
+  background: green url('green_felt.jpg') center;
   overflow: scroll;
-  vertical-align: center;
   text-align: center;
+  /*vertical-align: middle;*/
+  /*display: table-cell;*/
 }
 
 .board {
-  height: 100%;
-  width: auto;
-  overflow: scroll;
+  margin: 0 auto;
+  position: relative;
 }
 
 .tabletop img {
@@ -47,12 +48,13 @@ html, body {
 }
 
 .token {
-  height: 100px;
-  width: 100px;
+  height: 60;
+  width: 60;
 }
 
 .chat {
-  position: fixed;
-  width: 20%;
+  float: right;
+  width: 250px;
+  height: 100%;
   background-color: grey;
 }

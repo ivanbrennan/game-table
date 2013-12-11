@@ -1,16 +1,15 @@
 <div class="main-area">
-  <div class="tabletop">
 
+  <div class="chat"></div>
+
+
+  <div class="tabletop">
     <div class="board">
       <img src="<%= image_path(@game.board.image) %>">
       <% @game.tokens.each do |token| %>
         <%= sync partial: 'token', resource: token %>
       <% end %>
     </div>
-
   </div>
 
-  <div class="chat"></div>
-
-  <div class="tray"></div>
 </div>

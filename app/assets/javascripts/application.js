@@ -18,11 +18,21 @@
 
 $(window).load(function(){
 
+  $(function(){
+    //get size of image
+    var boardHeight = $('.board img').height();
+    var boardWidth = $('.board img').width();
+    //set size of board div
+    $(".board").height(boardHeight);
+    $(".board").width(boardWidth);
+    $(".main-area").css({"min-width": boardWidth});
+  });
+
   $(".board").mousedown(function(){
     return false;
   });
 
-  $(".token").draggable({ containment: "parent" });
+  $(".token").draggable({ containment: ".tabletop" });
 
   $(".token").on("dragstop", function(event, ui){
     var x = $(this).position().left;
