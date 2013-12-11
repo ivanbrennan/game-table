@@ -11,10 +11,11 @@
     <% @game.messages.each do |message| %>
       <%= sync partial: 'message', resource: message %>
     <% end %>
+    <%= sync_new partial: 'message', resource: Message.new, scope: @game %>
   </ul>
 
   <%= form_for Message.new, :remote => true do |f| %>
     <%= f.text_field :content %>
-  <%= f.submit "Send" %>
-<% end %>
+    <%= f.submit "Send" %>
+  <% end %>
 </div>
