@@ -4,14 +4,25 @@
 
 Board.create!([
   { :image => "test_board.jpg", :game_id => 1, :created_at => "2013-12-09 21:17:57", :updated_at => "2013-12-09 21:17:57" },
-  { :image => "backgammon_board.jpg", :game_id => 2, :created_at => "2013-12-10 16:57:09", :updated_at => "2013-12-10 16:57:09"}
+  { :image => "backgammon_board.jpg", :game_id => 2, :created_at => "2013-12-10 16:57:09", :updated_at => "2013-12-10 16:57:09" },
+  { :image => "test_board.jpg", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :image => "chinese_checkers.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:31:54" }
 ])
 
 
 
 Game.create!([
-  { :name => "Test", :created_at => "2013-12-09 21:16:28", :updated_at => "2013-12-09 21:16:28", :secure_room_code => Game.secure_room_code },
-  { :name => "backgammon", :created_at => "2013-12-10 16:57:50", :updated_at => "2013-12-10 16:57:50", :secure_room_code => Game.secure_room_code }
+  { :name => "Test", :secure_room_code => "1abf8c9b853129717009af60d02c67b2", :game_builder_id => nil, :created_at => "2013-12-09 21:16:28", :updated_at => "2013-12-09 21:16:28" },
+  { :name => "backgammon", :secure_room_code => "f0f46e5142039e201023930a86f9bb2d", :game_builder_id => nil, :created_at => "2013-12-10 16:57:50", :updated_at => "2013-12-10 16:57:50" },
+  { :name => "checkers", :secure_room_code => "31ebc2b0cb1cb03e513c0271883446c3", :game_builder_id => nil, :created_at => "2013-12-11 22:40:38", :updated_at => "2013-12-11 22:40:38" },
+  { :name => "chinese_checkers", :secure_room_code => "e20012be6c826a84053057fa39232247", :game_builder_id => nil, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:31:54" }
+])
+
+
+
+Message.create!([
+  { :content => "let's play", :game_id => 3, :created_at => "2013-12-11 22:40:53", :updated_at => "2013-12-11 22:40:53", :name => "John", :source => "user" },
+  { :content => "2 6", :game_id => 3, :created_at => "2013-12-11 22:40:56", :updated_at => "2013-12-11 22:40:56", :name => "John rolled", :source => "computer" }
 ])
 
 
@@ -70,7 +81,91 @@ Token.create!([
   { :name => "backgammon", :x_coordinate => 41, :y_coordinate => 548, :image => "test2.png", :game_id => 2, :created_at => "2013-12-10 17:02:40", :updated_at => "2013-12-10 17:10:25" },
   { :name => "backgammon", :x_coordinate => 919, :y_coordinate => 564, :image => "test2.png", :game_id => 2, :created_at => "2013-12-10 17:02:41", :updated_at => "2013-12-10 17:11:20" },
   { :name => "backgammon", :x_coordinate => 917, :y_coordinate => 449, :image => "test2.png", :game_id => 2, :created_at => "2013-12-10 17:02:42", :updated_at => "2013-12-10 17:11:22" },
-  { :name => "backgammon", :x_coordinate => 416, :y_coordinate => 211, :image => "test2.png", :game_id => 2, :created_at => "2013-12-10 17:02:43", :updated_at => "2013-12-10 17:10:41" }
+  { :name => "backgammon", :x_coordinate => 416, :y_coordinate => 211, :image => "test2.png", :game_id => 2, :created_at => "2013-12-10 17:02:43", :updated_at => "2013-12-10 17:10:41" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 10, :y_coordinate => 10, :image => "test_token.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 0, :y_coordinate => 0, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 0, :y_coordinate => 0, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 0, :y_coordinate => 0, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 0, :y_coordinate => 0, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 0, :y_coordinate => 0, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 0, :y_coordinate => 0, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 0, :y_coordinate => 0, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 0, :y_coordinate => 0, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 0, :y_coordinate => 0, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 0, :y_coordinate => 0, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :name => "checkers", :x_coordinate => 307, :y_coordinate => 0, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:45" },
+  { :name => "checkers", :x_coordinate => 442, :y_coordinate => 10, :image => "test2.png", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:43" },
+  { :name => "chinese_checkers", :x_coordinate => 365, :y_coordinate => 90, :image => "cc_purple.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:48:18" },
+  { :name => "chinese_checkers", :x_coordinate => 367, :y_coordinate => 150, :image => "cc_purple.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:48:11" },
+  { :name => "chinese_checkers", :x_coordinate => 308, :y_coordinate => 181, :image => "cc_purple.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:48:09" },
+  { :name => "chinese_checkers", :x_coordinate => 250, :y_coordinate => 213, :image => "cc_purple.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:48:06" },
+  { :name => "chinese_checkers", :x_coordinate => 253, :y_coordinate => 153, :image => "cc_purple.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:48:04" },
+  { :name => "chinese_checkers", :x_coordinate => 310, :y_coordinate => 120, :image => "cc_purple.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:48:01" },
+  { :name => "chinese_checkers", :x_coordinate => 425, :y_coordinate => 121, :image => "cc_purple.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:48:16" },
+  { :name => "chinese_checkers", :x_coordinate => 253, :y_coordinate => 90, :image => "cc_purple.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:55" },
+  { :name => "chinese_checkers", :x_coordinate => 315, :y_coordinate => 56, :image => "cc_purple.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:52" },
+  { :name => "chinese_checkers", :x_coordinate => 257, :y_coordinate => 23, :image => "cc_purple.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:50" },
+  { :name => "chinese_checkers", :x_coordinate => 532, :y_coordinate => 120, :image => "cc_blue.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:48" },
+  { :name => "chinese_checkers", :x_coordinate => 588, :y_coordinate => 160, :image => "cc_blue.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:45" },
+  { :name => "chinese_checkers", :x_coordinate => 642, :y_coordinate => 185, :image => "cc_blue.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:43" },
+  { :name => "chinese_checkers", :x_coordinate => 700, :y_coordinate => 220, :image => "cc_blue.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:40" },
+  { :name => "chinese_checkers", :x_coordinate => 700, :y_coordinate => 155, :image => "cc_blue.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:37" },
+  { :name => "chinese_checkers", :x_coordinate => 645, :y_coordinate => 123, :image => "cc_blue.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:20" },
+  { :name => "chinese_checkers", :x_coordinate => 586, :y_coordinate => 90, :image => "cc_blue.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:17" },
+  { :name => "chinese_checkers", :x_coordinate => 701, :y_coordinate => 93, :image => "cc_blue.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:14" },
+  { :name => "chinese_checkers", :x_coordinate => 645, :y_coordinate => 63, :image => "cc_blue.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:11" },
+  { :name => "chinese_checkers", :x_coordinate => 700, :y_coordinate => 30, :image => "cc_blue.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:08" },
+  { :name => "chinese_checkers", :x_coordinate => 301, :y_coordinate => 755, :image => "cc_brown.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:05" },
+  { :name => "chinese_checkers", :x_coordinate => 358, :y_coordinate => 725, :image => "cc_brown.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:47:02" },
+  { :name => "chinese_checkers", :x_coordinate => 303, :y_coordinate => 693, :image => "cc_brown.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:59" },
+  { :name => "chinese_checkers", :x_coordinate => 420, :y_coordinate => 693, :image => "cc_brown.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:55" },
+  { :name => "chinese_checkers", :x_coordinate => 250, :y_coordinate => 785, :image => "cc_brown.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:51" },
+  { :name => "chinese_checkers", :x_coordinate => 366, :y_coordinate => 662, :image => "cc_brown.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:48" },
+  { :name => "chinese_checkers", :x_coordinate => 250, :y_coordinate => 726, :image => "cc_brown.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:45" },
+  { :name => "chinese_checkers", :x_coordinate => 250, :y_coordinate => 663, :image => "cc_brown.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:42" },
+  { :name => "chinese_checkers", :x_coordinate => 305, :y_coordinate => 633, :image => "cc_brown.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:38" },
+  { :name => "chinese_checkers", :x_coordinate => 248, :y_coordinate => 598, :image => "cc_brown.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:35" },
+  { :name => "chinese_checkers", :x_coordinate => 747, :y_coordinate => 503, :image => "cc_green.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:32" },
+  { :name => "chinese_checkers", :x_coordinate => 805, :y_coordinate => 475, :image => "cc_green.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:29" },
+  { :name => "chinese_checkers", :x_coordinate => 746, :y_coordinate => 442, :image => "cc_green.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:26" },
+  { :name => "chinese_checkers", :x_coordinate => 745, :y_coordinate => 378, :image => "cc_green.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:22" },
+  { :name => "chinese_checkers", :x_coordinate => 801, :y_coordinate => 410, :image => "cc_green.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:19" },
+  { :name => "chinese_checkers", :x_coordinate => 860, :y_coordinate => 446, :image => "cc_green.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:16" },
+  { :name => "chinese_checkers", :x_coordinate => 915, :y_coordinate => 411, :image => "cc_green.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:11" },
+  { :name => "chinese_checkers", :x_coordinate => 861, :y_coordinate => 380, :image => "cc_green.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:07" },
+  { :name => "chinese_checkers", :x_coordinate => 806, :y_coordinate => 350, :image => "cc_green.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:05" },
+  { :name => "chinese_checkers", :x_coordinate => 748, :y_coordinate => 315, :image => "cc_green.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:46:02" },
+  { :name => "chinese_checkers", :x_coordinate => 195, :y_coordinate => 500, :image => "cc_red.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:45:58" },
+  { :name => "chinese_checkers", :x_coordinate => 197, :y_coordinate => 440, :image => "cc_red.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:45:55" },
+  { :name => "chinese_checkers", :x_coordinate => 145, :y_coordinate => 467, :image => "cc_red.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:45:52" },
+  { :name => "chinese_checkers", :x_coordinate => 145, :y_coordinate => 400, :image => "cc_red.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:45:49" },
+  { :name => "chinese_checkers", :x_coordinate => 200, :y_coordinate => 376, :image => "cc_red.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:45:46" },
+  { :name => "chinese_checkers", :x_coordinate => 195, :y_coordinate => 312, :image => "cc_red.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:45:44" },
+  { :name => "chinese_checkers", :x_coordinate => 140, :y_coordinate => 340, :image => "cc_red.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:45:34" },
+  { :name => "chinese_checkers", :x_coordinate => 90, :y_coordinate => 370, :image => "cc_red.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:45:31" },
+  { :name => "chinese_checkers", :x_coordinate => 90, :y_coordinate => 435, :image => "cc_red.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:45:28" },
+  { :name => "chinese_checkers", :x_coordinate => 30, :y_coordinate => 403, :image => "cc_red.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:45:26" },
+  { :name => "chinese_checkers", :x_coordinate => 525, :y_coordinate => 692, :image => "cc_yellow.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:45:23" },
+  { :name => "chinese_checkers", :x_coordinate => 585, :y_coordinate => 660, :image => "cc_yellow.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:33:14" },
+  { :name => "chinese_checkers", :x_coordinate => 637, :y_coordinate => 632, :image => "cc_yellow.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:33:06" },
+  { :name => "chinese_checkers", :x_coordinate => 686, :y_coordinate => 600, :image => "cc_yellow.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:33:04" },
+  { :name => "chinese_checkers", :x_coordinate => 581, :y_coordinate => 725, :image => "cc_yellow.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:33:00" },
+  { :name => "chinese_checkers", :x_coordinate => 638, :y_coordinate => 691, :image => "cc_yellow.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:32:52" },
+  { :name => "chinese_checkers", :x_coordinate => 698, :y_coordinate => 668, :image => "cc_yellow.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:32:46" },
+  { :name => "chinese_checkers", :x_coordinate => 632, :y_coordinate => 757, :image => "cc_yellow.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:32:43" },
+  { :name => "chinese_checkers", :x_coordinate => 690, :y_coordinate => 722, :image => "cc_yellow.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:32:40" },
+  { :name => "chinese_checkers", :x_coordinate => 687, :y_coordinate => 790, :image => "cc_yellow.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:32:37" }
 ])
 
 
