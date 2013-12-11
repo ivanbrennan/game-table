@@ -18,9 +18,9 @@
   </ul>
 
   <div>
-    <%= form_for Message.new, :html => {:class => "message-form"} do |f| %>
+    <%= form_for Message.new do |f| %>
       <%= f.text_field :name %>
-      <%= f.text_area :content %>
+      <%= f.text_field :content %>
       <%= f.submit "Send" %>
     <% end %>
   </div>

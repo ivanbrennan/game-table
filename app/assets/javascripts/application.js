@@ -26,7 +26,18 @@ $(window).load(function(){
     x > 0 ? x : x = 0;
     y > 0 ? y : y = 0;
     var tokenId = $(this).data("id");
-    var valuesToSubmit = "x_coordinate=" + x + "&y_coordinate="+ y
-    $.post("tokens/"+tokenId+"/move", valuesToSubmit, function(){})
+    var valuesToSubmit = "x_coordinate=" + x + "&y_coordinate="+ y;
+    $.post("tokens/"+tokenId+"/move", valuesToSubmit, function(){});
   });
+
+  $("form").submit(function(){
+    console.log("submit function activated");
+    var formData = $(".new_message").serialize();
+
+    $.post($(".new_message").attr("action"), formData, function(){
+      console.log("post function activated");
+      $("#message_content").val("");
+    });
+  return false;
+  })
 });
