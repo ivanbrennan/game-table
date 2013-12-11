@@ -39,5 +39,8 @@ $(window).load(function(){
       $("#message_content").val("");
     });
   return false;
-  })
+  });
+
+  $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
+
 });
