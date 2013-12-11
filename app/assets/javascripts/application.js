@@ -60,5 +60,5 @@ $(window).load(function(){
      $("form").submit();
     }
   });
-  
+
 });
