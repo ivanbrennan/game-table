@@ -8,7 +8,9 @@
   <h3>Chat</h3>
 
   <ul id="chat">
-    <%= sync partial: 'message', resource: message %>
+    <% @game.messages.each do |message| %>
+      <%= sync partial: 'message', resource: message %>
+    <% end %>
   </ul>
 
   <%= form_for Message.new, :remote => true do |f| %>
