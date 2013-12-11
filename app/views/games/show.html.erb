@@ -3,3 +3,5 @@
 <% @game.tokens.each do |token| %>
   <%= sync partial: 'token', resource: token %>
 <% end %>
+
+<%= link_to "Reset Game", reset_path(@game.secure_room_code)%>

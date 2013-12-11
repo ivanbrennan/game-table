@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show]
+  before_action :set_game, only: [:show, :reset]
 
   def index
     @games = Game.all
@@ -14,6 +14,11 @@ class GamesController < ApplicationController
   def backgammon
     @backgammon = GameBuilder.build_backgammon
     redirect_to game_path(@backgammon.secure_room_code)
+  end
+
+  def reset
+    @game.reset
+    redirect_to game_path(@game.secure_room_code)
   end
 
   def show

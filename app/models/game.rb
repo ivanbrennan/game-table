@@ -7,5 +7,25 @@ class Game < ActiveRecord::Base
      SecureRandom.hex
   end
 
+  def reset
+    case self.name
+    when "checkers"
+      reset_checkers
+    when "backgammon"
+      reset_backgammon
+    end
+  end
+
+  def reset_checkers
+    self.tokens.each do |token|
+      token.update(x_coordinate: 0, y_coordinate: 0)
+    end
+  end
+
+  def reset_backgammon
+    self.tokens.each do |token|
+      token.update(x_coordinate: 0, y_coordinate: 0)
+    end
+  end
 
 end

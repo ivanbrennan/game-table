@@ -1,7 +1,7 @@
 <% @games.each do |game| %>
-  <%= link_to game.name, game_path(game.secure_room_code) %>
+  <li><%= link_to game.name, game_path(game.secure_room_code) %></li>
 <% end %>
-<br>
+<br><br>
 <%= link_to "Play Checkers", checkers_path %>
 
 <br>
