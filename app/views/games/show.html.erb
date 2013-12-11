@@ -9,6 +9,12 @@
   </div>
 
   <div class="chat">
+
+    <div class="dice-roll">
+      <%= link_to "roll", "/games/roll/#{@game.secure_room_code}", method: "post" %>
+    </div>
+
+
     <h3>Chat</h3>
     <div class="messages-box">
       <ul id="chat">
