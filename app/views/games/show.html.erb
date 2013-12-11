@@ -1,6 +1,5 @@
 <div class="main-area">
 
-  <%= link_to "Reset Game", reset_path(@game.secure_room_code), :class => "menu"%>
 
   <div class="chat">
     <h3>Chat</h3>
@@ -23,16 +22,19 @@
   </div>
 
   <div class="tabletop">
-    <div class="board">
-      <img src="<%= image_path(@game.board.image) %>">
-      <% @game.tokens.each do |token| %>
-        <%= sync partial: 'token', resource: token %>
-      <% end %>
+    <div class="truecenter">
+      <div class="board">
+        <img src="<%= image_path(@game.board.image) %>">
+        <% @game.tokens.each do |token| %>
+          <%= sync partial: 'token', resource: token %>
+        <% end %>
+      </div>
     </div>
   </div>
 
-  <div>
-    <%= link_to "Back to Games", games_path %>
+  <div class="menu">
+    <%= link_to "Back to Games", games_path %><br>
+    <%= link_to "Reset Game", reset_path(@game.secure_room_code) %>
   </div>
 
 </div>

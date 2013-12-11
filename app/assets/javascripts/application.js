@@ -22,10 +22,16 @@ $(window).load(function(){
     //get size of image
     var boardHeight = $('.board img').height();
     var boardWidth = $('.board img').width();
+    var centerWidth = (boardWidth / 2);
+    var centerHeight = (boardHeight / 2);
+    var mainWidth = boardWidth + 250;
     //set size of board div
     $(".board").height(boardHeight);
     $(".board").width(boardWidth);
-    $(".main-area").css({"min-width": boardWidth});
+    $(".board").css({"top": centerHeight * -1});
+    $(".board").css({"left": centerWidth * -1});
+    $(".main-area").css({"min-width": mainWidth});
+
   });
 
   $(".board").mousedown(function(){
