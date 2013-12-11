@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131210233535) do
+ActiveRecord::Schema.define(version: 20131211154726) do
 
   create_table "boards", force: true do |t|
     t.string   "image"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20131210233535) do
     t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "messages", ["game_id"], name: "index_messages_on_game_id"
