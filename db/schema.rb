@@ -11,20 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20131211003930) do
-=======
 ActiveRecord::Schema.define(version: 20131210233535) do
->>>>>>> chat-window
 
   create_table "boards", force: true do |t|
     t.string   "image"
     t.integer  "game_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "game_builders", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
