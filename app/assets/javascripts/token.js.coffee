@@ -2,7 +2,7 @@ class Sync.Token extends Sync.View
 
   afterUpdate: ->
     console.log("it's working")
-    @$el.draggable({ containment: "parent" })
+    @$el.draggable({ containment: ".tabletop" })
     thisToken = ".token" + @$el.data("id")
 
     `$(thisToken).on("dragstop", function(event, ui){

@@ -2,14 +2,3 @@
   position: fixed;
   right: 0px;
 }*/
-
-ul {
-  list-style-type: none;
-}
-
-.messages-box {
-  border: solid black 1px; /*for now*/
-  max-height: 500px;
-  width: 300px;
-  overflow-y: scroll;
-}

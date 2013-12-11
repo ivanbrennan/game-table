@@ -1,31 +1,38 @@
-<img src="<%= image_path(@game.board.image) %>">
+<div class="main-area">
 
-<% @game.tokens.each do |token| %>
-  <%= sync partial: 'token', resource: token %>
-<% end %>
+  <%= link_to "Reset Game", reset_path(@game.secure_room_code), :class => "menu"%>
 
-<%= link_to "Reset Game", reset_path(@game.secure_room_code)%>
+  <div class="chat">
+    <h3>Chat</h3>
+    <div class="messages-box">
+      <ul id="chat">
+        <% @game.messages.each do |message| %>
+          <%= sync partial: 'message', resource: message %>
+        <% end %>
+        <%= sync_new partial: 'message', resource: Message.new, scope: @game %>
+      </ul>
+    </div>
 
-<div class="messages-div">
-  <h3>Chat</h3>
-  <div class="messages-box">
-    <ul id="chat">
-      <% @game.messages.each do |message| %>
-        <%= sync partial: 'message', resource: message %>
+    <div class="message-input">
+      <%= form_for Message.new do |f| %>
+        <%= f.text_field :name, :placeholder => "Screen name" %>
+        <%= f.text_area :content, :size => "32x4" %>
+        <%= f.submit "Send" %>
       <% end %>
-      <%= sync_new partial: 'message', resource: Message.new, scope: @game %>
-    </ul>
+    </div>
+  </div>
+
+  <div class="tabletop">
+    <div class="board">
+      <img src="<%= image_path(@game.board.image) %>">
+      <% @game.tokens.each do |token| %>
+        <%= sync partial: 'token', resource: token %>
+      <% end %>
+    </div>
   </div>
 
   <div>
-    <%= form_for Message.new do |f| %>
-      <%= f.text_field :name, :placeholder => "Screen name" %>
-      <%= f.text_field :content, :placeholder => "Message" %>
-      <%= f.submit "Send" %>
-    <% end %>
+    <%= link_to "Back to Games", games_path %>
   </div>
-</div>
 
-<div>
-  <%= link_to "Back to Games", games_path %>
 </div>
