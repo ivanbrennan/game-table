@@ -4,14 +4,14 @@
 
 <div class="main-area">
   <div class="menu">
-    <%= link_to "Reset Game", reset_path(@game.secure_room_code) %>
-    <%= link_to "Home", root_path %>
+    <%= link_to "Reset Game", reset_path(@game.secure_room_code), class: "btn btn-success btn-lg" %><br>
+    <%= link_to "Home", root_path, class: "btn btn-success btn-lg" %>
   </div>
 
   <div class="chat">
 
     <div class="dice-roll">
-      <%= link_to "roll", "/games/roll/#{@game.secure_room_code}", method: "post" %>
+      <%= link_to "Roll Dice!", "/games/roll/#{@game.secure_room_code}", method: "post", class: "btn btn-success btn-lg" %>
     </div>
 
 
