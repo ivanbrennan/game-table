@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20131211003930) do
+=======
+ActiveRecord::Schema.define(version: 20131210233535) do
+>>>>>>> chat-window
 
   create_table "boards", force: true do |t|
     t.string   "image"
@@ -32,6 +36,15 @@ ActiveRecord::Schema.define(version: 20131211003930) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "messages", force: true do |t|
+    t.text     "content"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["game_id"], name: "index_messages_on_game_id"
 
   create_table "tokens", force: true do |t|
     t.string   "name"
