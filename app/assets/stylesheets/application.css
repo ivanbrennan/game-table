@@ -195,10 +195,31 @@ html, body {
 }
 
 .messages-box {
-  margin: 10px 10px 100px;
+  margin: 18px 18px 100px;
   background-color: rgba(255, 255, 255, 0.6);
-  overflow-y: scroll;
   border-radius: 4px;
+  overflow: auto;
+  height: 65%;
+}
+
+.messages-box-backgammon {
+  margin: 18px 18px 100px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  overflow: auto;
+  height: 57%;
+}
+/*messages-box resizing depending on size of screen*/
+@media screen and (max-height: 400px) {
+    .messages-box { height: 40%; }   
+}
+
+@media screen and (max-height: 240px) {
+    .messages-box { height: 20%; } 
+}
+
+@media screen and (max-height: 400px) {
+    .messages-box { height: 40%; }   
 }
 
 textarea {

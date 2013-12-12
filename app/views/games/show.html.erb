@@ -24,7 +24,7 @@
         <%= sync_new partial: 'message', resource: Message.new, scope: @game %>
       </ul>
     </div>
-
+      
     <div class="message-input">
       <%= form_for Message.new do |f| %>
         <%= f.text_field :name, :placeholder => "Screen name" %>
