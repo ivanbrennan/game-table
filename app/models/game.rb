@@ -13,21 +13,19 @@ class Game < ActiveRecord::Base
   end
 
   def reset_checkers
-    self.tokens.each do |token|
-      token.update(x_coordinate: 0, y_coordinate: 0)
-    end
+    GameBuilder.build_checkers(self)
   end
 
   def reset_backgammon
-    self.tokens.each do |token|
-      token.update(x_coordinate: 0, y_coordinate: 0)
-    end
+    GameBuilder.build_checkers(self)
   end
 
   def reset_chess
-    self.tokens.each do |token|
-      token.update(x_coordinate: 0, y_coordinate: 0)
-    end
+    GameBuilder.build_checkers(self)
+  end
+
+  def reset_chinese_checkers
+    GameBuilder.build_chinese_checkers(self)
   end
 
 end
