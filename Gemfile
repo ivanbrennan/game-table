@@ -51,6 +51,11 @@ gem 'rvm-capistrano'
 gem 'pusher'
 gem 'sync'
 
+# Whenever allows a cron job to be run
+gem 'whenever', :require => false
+
+gem 'chronic'
+
 group :test, :development do
   gem "pry"
   gem "seed_dump"
