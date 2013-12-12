@@ -1,6 +1,6 @@
 GameTable::Application.routes.draw do
 
-  post '/games/:secure_room_code/:email_list' => "games#email", :as => "email"
+  post '/games/:secure_room_code/email' => "games#email", :as => "email"
   root 'games#index'
   get '/games/:secure_room_code/reset' => "games#reset", :as => "reset"
   get '/games/checkers' => "games#checkers", :as => "checkers"

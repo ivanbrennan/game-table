@@ -27,7 +27,7 @@ class GamesController < ApplicationController
   end
 
   def email
-    GameMailer.game_email(@game, params[:email_list])
+    GameMailer.game_email(@game, params[:email]).deliver
     redirect_to :back
   end
 

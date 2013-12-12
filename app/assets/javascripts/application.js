@@ -71,7 +71,7 @@ $(document).ready(function(){
     return false;
     });
 
-    $("form").submit(function(){
+    $(".message-input form").submit(function(){
       var formData = $(".new_message").serialize();
 
       $.post($(".new_message").attr("action"), formData, function(){
