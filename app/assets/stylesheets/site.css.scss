@@ -1,5 +1,4 @@
-
- /*font*/
+/*font*/
  @font-face {
  font-family: 'Glyphicons Halflings';
  src: asset-url('glyphicons-halflings-regular.eot');
@@ -22,7 +21,7 @@
 .index-total {
   height: 100%;
   width: auto;
-  background: url("chinese_checkers_bg.jpg") no-repeat center center fixed #000; 
+  background: image-url("chinese_checkers_bg.jpg") no-repeat center center fixed #000; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -39,6 +38,7 @@
 
 .input-group {
   text-align: center;
+  margin: 0 auto;
 }
 
 .input-group a {
@@ -110,7 +110,7 @@ html, body {
   width: auto;
   height: 100%;
   margin-right: 250px;
-  background: green url('green_felt.jpg') center;
+  background: green image-url('green_felt.jpg') center;
   text-align: center;
   position: relative;
   overflow: scroll;
@@ -149,7 +149,7 @@ html, body {
   width: 250px;
   height: 100%;
   /*background-color: rgba(245, 245, 245, 0.8);*/
-  background: grey url('wood-texture.jpg') center;
+  background: grey image-url('wood-texture.jpg') center;
   border: solid black 1px; /*for now*/
 }
 
