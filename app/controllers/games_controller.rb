@@ -21,6 +21,11 @@ class GamesController < ApplicationController
     redirect_to game_path(@backgammon.secure_room_code)
   end
 
+  def chinese_checkers
+    @chinese_checkers = GameBuilder.build_chinese_checkers
+    redirect_to game_path(@chinese_checkers.secure_room_code)
+  end
+
   def reset
     @game.reset
     redirect_to game_path(@game.secure_room_code)
