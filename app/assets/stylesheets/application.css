@@ -107,9 +107,6 @@ html, body {
   min-height: 100%;
 }
 
-textarea {
-  resize: none;
-}
 .main-area {
   position: absolute;
   top: 0;
@@ -203,7 +200,32 @@ textarea {
   margin-bottom: 28%;
   height: 72%;
   background-color: rgba(255, 255, 255, 0.6);
-  overflow-y: scroll;
+  border-radius: 4px;
+  overflow: auto;
+  height: 65%;
+}
+/*messages-box resizing depending on size of screen*/
+@media screen and (max-height: 400px) {
+    .messages-box { height: 40%; }   
+}
+
+@media screen and (max-height: 240px) {
+    .messages-box { height: 20%; } 
+}
+
+@media screen and (max-height: 400px) {
+    .messages-box { height: 40%; }   
+}
+
+textarea {
+  resize: none;
+  border-radius: 4px;
+  border-style: none;
+}
+
+.new_message input {
+  border-radius: 4px;
+  border-style: none;
 }
 
 ul {
