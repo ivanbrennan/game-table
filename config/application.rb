@@ -1,7 +1,5 @@
 require File.expand_path('../boot', __FILE__)
 
-config.assets.precompile += %w( glyphicons-halflings-regular.eot )
-
 # Pick the frameworks you want:
 require "active_record/railtie"
 require "action_controller/railtie"
@@ -15,6 +13,8 @@ Bundler.require(:default, Rails.env)
 
 module GameTable
   class Application < Rails::Application
+    config.assets.precompile += %w( glyphicons-halflings-regular.eot glyphicons-halflings-regular.woff glyphicons-halflings-regular.truetype glyphicons-halflings-regular.svg glyphicons-halflings-regular.ttf)
+    config.assets.precompile += %w(  )
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
