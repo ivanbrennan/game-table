@@ -45,7 +45,7 @@ class GameBuilder < ActiveRecord::Base
   def self.build_checkers(g = nil)
     if g == nil
       g = Game.create(name: "checkers", secure_room_code: Game.secure_room_code)
-      g.create_board(image: "test_board.jpg")
+      g.create_board(image: "chess_board.jpg")
     end
 
     g.tokens.create( :name => nil, :x_coordinate => 232, :y_coordinate => 158, :image_0 => "checkers_red_0.png",  :image_1 => "checkers_red_1.png", :flippable => true)

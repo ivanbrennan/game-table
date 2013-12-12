@@ -29,15 +29,6 @@ $(document).ready(function(){
     $(".loading-box").fadeOut('slow');
     $(".main-area").fadeIn('slow');
 
-    $(function(){
-      //get size of image
-      var boardHeight = $('.board img').height();
-      var boardWidth = $('.board img').width();
-      //set size of board div
-      $(".board").height(boardHeight);
-      $(".board").width(boardWidth);
-      $(".main-area").css({"min-width": boardWidth});
-    });
 
     $(".board").mousedown(function(){
       return false;
@@ -51,6 +42,23 @@ $(document).ready(function(){
       var tokenId = $(this).data("id");
       var valuesToSubmit = "x_coordinate=" + x + "&y_coordinate="+ y;
       $.post("tokens/"+tokenId+"/move", valuesToSubmit, function(){});
+    });
+
+
+    $(function(){
+      //get size of image
+      var boardHeight = $('.board img').height();
+      var boardWidth = $('.board img').width();
+      var centerWidth = (boardWidth / 2);
+      var centerHeight = (boardHeight / 2);
+      var mainWidth = boardWidth + 250;
+      //set size of board div
+      $(".board").height(boardHeight);
+      $(".board").width(boardWidth);
+      $(".board").css({"top": centerHeight * -1});
+      $(".board").css({"left": centerWidth * -1});
+      $(".main-area").css({"min-width": mainWidth});
+
     });
 
 

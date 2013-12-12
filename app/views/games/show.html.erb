@@ -3,14 +3,9 @@
 </div>
 
 <div class="main-area">
-  <div class="alert alert-warning alert-dismissable">
+  <div class="alert alert-warning alert-dismissable alert-whatevs-im-tired">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     <p>Be sure to enter your screen name!</p>
-  </div>
-
-  <div class="menu">
-    <%= link_to "Reset Game", reset_path(@game.secure_room_code), class: "btn btn-success btn-lg" %><br>
-    <%= link_to "Home", root_path, class: "btn btn-success btn-lg" %>
   </div>
 
   <div class="chat">
@@ -20,7 +15,6 @@
         <%= link_to "Roll Dice!", "/games/roll/#{@game.secure_room_code}", method: "post", class: "btn btn-success btn-lg" %>
       </div>
     <% end %>
-
     <div class="messages-box">
       <ul id="chat">
         <% @game.messages.each do |message| %>
@@ -33,18 +27,26 @@
     <div class="message-input">
       <%= form_for Message.new do |f| %>
         <%= f.text_field :name, :placeholder => "Screen name" %>
-        <%= f.text_area :content, :size => "36x4" %>
+        <%= f.text_area :content, :size => "32x4" %>
         <%= f.submit "Send", class: "btn btn-success btn-lg" %>
       <% end %>
     </div>
   </div>
 
   <div class="tabletop">
-    <div class="board">
-      <img src="<%= image_path(@game.board.image) %>">
-      <% @game.tokens.each do |token| %>
-        <%= sync partial: 'token', resource: token %>
-      <% end %>
+    <div class="truecenter">
+      <div class="board">
+        <img src="<%= image_path(@game.board.image) %>">
+        <% @game.tokens.each do |token| %>
+          <%= sync partial: 'token', resource: token %>
+        <% end %>
+      </div>
     </div>
   </div>
+
+  <div class="menu">
+    <%= link_to "Reset Game", reset_path(@game.secure_room_code), class: "btn btn-success btn-md" %><br>
+    <%= link_to "Home", root_path, class: "btn btn-success btn-md" %>
+  </div>
+
 </div>
