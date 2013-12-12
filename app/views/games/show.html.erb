@@ -3,20 +3,14 @@
 </div>
 
 <div class="main-area">
-<!--   <div class="alert alert-warning alert-dismissable">
   <div class="alert alert-warning alert-dismissable alert-whatevs-im-tired">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     <p>Be sure to enter your screen name!</p>
-  </div> -->
+  </div>
 
   <div class="chat">
     <div class="chat-header">
       <h2>Chat</h2>
-      <% if @game.name == "backgammon" %>
-        <div class="dice-roll">
-          <%= link_to "Roll Dice!", "/games/roll/#{@game.secure_room_code}", method: "post", class: "btn btn-success btn-lg" %>
-        </div>
-      <% end %>
     </div>
     <div class="messages-box">
       <ul id="chat">
@@ -31,7 +25,16 @@
       <%= form_for Message.new do |f| %>
         <%= f.text_field :name, :placeholder => "Screen name" %>
         <%= f.text_area :content, :rows => "4" %>
-        <%= f.submit "Send", class: "btn btn-success btn-lg" %>
+        <% if @game.name == "backgammon" %>
+          <div class="button-box">
+            <%= f.submit "Send", class: "btn btn-success btn-lg signup" %>
+              <%= link_to "Roll Dice!", "/games/roll/#{@game.secure_room_code}", method: "post", class: "btn btn-success btn-lg signup dice-roll" %>
+          </div>
+        <% else %>
+          <div class="normal-send">
+            <%= f.submit "Send", class: "btn btn-success btn-lg" %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -48,8 +51,16 @@
   </div>
 
   <div class="menu">
-    <%= link_to "Reset Game", reset_path(@game.secure_room_code), class: "btn btn-success btn-md", confirm: "Are you sure?" %><br>
-    <%= link_to "Home", root_path, class: "btn btn-success btn-md" %>
+    <div class="btn-group">
+        <a class="btn dropdown-toggle btn-mini btn-success" data-toggle="dropdown" href="#">
+          Menu
+          <span class="caret"></span>
+        </a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Reset Game", reset_path(@game.secure_room_code), confirm: "Are you sure?" %></li>
+        <li><%= link_to "Home", root_path %></li>
+      </ul>
+    </div>
   </div>
 
 </div>

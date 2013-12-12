@@ -74,10 +74,10 @@ $(document).ready(function(){
     });
 
 
-    $(".dice-roll a").click(function(){
+    $(".dice-roll").click(function(){
       var name = $("#message_name").val(); 
 
-      $.post($(".dice-roll a").attr("href"), "name="+name, function(){
+      $.post($(".dice-roll").attr("href"), "name="+name, function(){
         $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
       });
     return false;

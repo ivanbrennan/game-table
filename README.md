@@ -143,7 +143,7 @@ In order to keep the database in good shape, any game older then 1 week is dumpe
 
 ```
 	every 1.day, :at => '12:00 am' do 
-  	  runner "Game.delete"
+  	 runner "Game.delete"
 	end
 ```
 

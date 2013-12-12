@@ -161,11 +161,6 @@ html, body {
 
 /*chat styling*/
 
-.menu a {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
 .chat {
   float: right;
   position: relative;
@@ -179,10 +174,6 @@ html, body {
 .chat h2 {
   text-align: center;
   color: white;
-}
-
-#chat li {
-  /*color: #8F9E9F;*/
 }
 
 .message-input {
@@ -227,7 +218,7 @@ textarea {
   border-style: none;
 }
 
-ul {
+.chat ul {
   list-style-type: none;
   margin-left: -30px;
 }
@@ -242,8 +233,8 @@ ul {
   margin: 3px 0 2px;
 }
 
-.dice-roll {
-  margin-bottom: 15px;
+.button-box input {
+  width: 100px;
   text-align: center;
 }
 
@@ -269,6 +260,14 @@ ul {
 
 a {
   color: #5CB85C;
+}
+
+.btn a {
+  color: white;
+}
+
+.btn a:hover {
+  text-decoration: none;
 }
 
 a:hover {
