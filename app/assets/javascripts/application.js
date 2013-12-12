@@ -81,6 +81,11 @@ $(document).ready(function(){
        $("form").submit();
       }
     });
-    
+
+    $(".token").on("dblclick", function(){
+      var tokenId = $(this).data("id");
+      $.post("tokens/"+tokenId+"/flip", function(){});
+    });
+
   });
 });
