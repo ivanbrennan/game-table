@@ -1,5 +1,5 @@
 @application_name = "game-table"
-@application_ip_address = "162.243.122.67"
+@application_ip_address = "162.243.113.67"
 @application_repo = "git@github.com:J3AI/game-table.git"
 
 require "bundler/capistrano"
