@@ -107,9 +107,6 @@ html, body {
   min-height: 100%;
 }
 
-textarea {
-  resize: none;
-}
 .main-area {
   position: absolute;
   top: 0;
@@ -200,6 +197,18 @@ textarea {
   margin: 10px 10px 100px;
   background-color: rgba(255, 255, 255, 0.6);
   overflow-y: scroll;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: none;
+  border-radius: 4px;
+  border-style: none;
+}
+
+.new_message input {
+  border-radius: 4px;
+  border-style: none;
 }
 
 ul {
