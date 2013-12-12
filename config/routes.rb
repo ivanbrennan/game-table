@@ -6,6 +6,7 @@ GameTable::Application.routes.draw do
   get '/games/chess' => "games#chess", :as => "chess"
   get '/games/backgammon' => "games#backgammon", :as => "backgammon"
   post '/games/tokens/:id/move', :to => 'tokens#move'
+  post '/games/tokens/:id/flip', :to => 'tokens#flip'
   get  '/games/:secure_room_code' => 'games#show', :as => "game"
 
   resources :games, except: [:show, :new]

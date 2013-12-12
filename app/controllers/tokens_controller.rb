@@ -6,13 +6,14 @@ class TokensController < ApplicationController
   def move
     @token.update(:x_coordinate => params[:x_coordinate].to_i, :y_coordinate => params[:y_coordinate].to_i)
     sync_update @token
-    # redirect_to @token.game
+    redirect_to @token.game
   end
 
   def flip
     @token.state = (@token.state + 1) % 2
     @token.save
     sync_update @token
+    redirect_to @token.game
   end
 
 

@@ -66,11 +66,9 @@ $(document).ready(function(){
       }
     });
 
-    $(".token").on("dblclick", function(event, ui){
-      console.log("dblclicked");
-      $.post("tokens/"+tokenId+"/flip", "", function(){});
-    });
-
+    $(".token").on("dblclick", function(){
+      var tokenId = $(this).data("id");
+      $.post("tokens/"+tokenId+"/flip", function(){});
     });
 
   });
