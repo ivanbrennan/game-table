@@ -15,25 +15,16 @@
       <div class="dice-roll">
         <%= link_to "Roll Dice!", "/games/roll/#{@game.secure_room_code}", method: "post", class: "btn btn-success btn-lg" %>
       </div>
-      <div class="messages-box-backgammon">
-        <ul id="chat">
-          <% @game.messages.each do |message| %>
-            <%= sync partial: 'message', resource: message %>
-          <% end %>
-          <%= sync_new partial: 'message', resource: Message.new, scope: @game %>
-        </ul>
-      </div>
-    <% else %>
-      <div class="messages-box">
-        <ul id="chat">
-          <% @game.messages.each do |message| %>
-            <%= sync partial: 'message', resource: message %>
-          <% end %>
-          <%= sync_new partial: 'message', resource: Message.new, scope: @game %>
-        </ul>
-      </div>
     <% end %>
-
+    <div class="messages-box">
+      <ul id="chat">
+        <% @game.messages.each do |message| %>
+          <%= sync partial: 'message', resource: message %>
+        <% end %>
+        <%= sync_new partial: 'message', resource: Message.new, scope: @game %>
+      </ul>
+    </div>
+      
     <div class="message-input">
       <%= form_for Message.new do |f| %>
         <%= f.text_field :name, :placeholder => "Screen name" %>
