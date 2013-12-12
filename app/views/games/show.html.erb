@@ -3,19 +3,24 @@
 </div>
 
 <div class="main-area">
+  <div class="alert alert-warning alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>Be sure to enter your screen name!</p>
+  </div>
+
   <div class="menu">
     <%= link_to "Reset Game", reset_path(@game.secure_room_code), class: "btn btn-success btn-lg" %><br>
     <%= link_to "Home", root_path, class: "btn btn-success btn-lg" %>
   </div>
 
   <div class="chat">
+    <h2>Chat</h2>
+    <% if @game.name == "backgammon" %>
+      <div class="dice-roll">
+        <%= link_to "Roll Dice!", "/games/roll/#{@game.secure_room_code}", method: "post", class: "btn btn-success btn-lg" %>
+      </div>
+    <% end %>
 
-    <div class="dice-roll">
-      <%= link_to "Roll Dice!", "/games/roll/#{@game.secure_room_code}", method: "post", class: "btn btn-success btn-lg" %>
-    </div>
-
-
-    <h3>Chat</h3>
     <div class="messages-box">
       <ul id="chat">
         <% @game.messages.each do |message| %>
@@ -28,8 +33,8 @@
     <div class="message-input">
       <%= form_for Message.new do |f| %>
         <%= f.text_field :name, :placeholder => "Screen name" %>
-        <%= f.text_area :content, :size => "32x4" %>
-        <%= f.submit "Send" %>
+        <%= f.text_area :content, :size => "36x4" %>
+        <%= f.submit "Send", class: "btn btn-success btn-lg" %>
       <% end %>
     </div>
   </div>
@@ -42,9 +47,4 @@
       <% end %>
     </div>
   </div>
-
-  <div>
-    <%= link_to "Back to Games", games_path %>
-  </div>
-
 </div>

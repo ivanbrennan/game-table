@@ -145,12 +145,26 @@ textarea {
 }
 
 /*chat styling*/
+
+.menu a {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
 .chat {
   float: right;
   width: 250px;
   height: 100%;
-  background-color: grey;
+  background-color: rgba(245, 245, 245, 0.8);
   border: solid black 1px; /*for now*/
+}
+
+.chat h2 {
+  text-align: center;
+}
+
+#chat li {
+  color: #8F9E9F;
 }
 
 .message-input {
@@ -173,6 +187,11 @@ ul {
 
 input {
   width: 240px;
+}
+
+.dice-roll {
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 /*footer styling*/
