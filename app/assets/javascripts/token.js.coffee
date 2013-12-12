@@ -13,3 +13,8 @@ class Sync.Token extends Sync.View
       $.post("tokens/"+tokenId+"/move", valuesToSubmit, function(){})
     });`
 
+    `$(thisToken).on("dblclick", function(){
+      var tokenId = $(this).data("id");
+      $.post("tokens/"+tokenId+"/flip", function(){});
+    });`
+
