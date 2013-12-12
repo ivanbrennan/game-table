@@ -6,16 +6,13 @@ class Token < ActiveRecord::Base
     self.state ||= 0
   end
 
-  def visibility(n=0)
-    (self.state + n) % 2
-  end
-
   def img_shown
-    self.send("image_#{self.visibility}")
+    self.send("image_#{self.state}")
   end
 
   def img_hidden
-    self.send("image_#{self.visibility(1)}")
+    alt_state = (self.state + 1) % 2
+    self.send("image_#{alt_state}")
   end
 
   # sync :all, scope: :project
