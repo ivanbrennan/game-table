@@ -83,8 +83,11 @@ $(document).ready(function(){
     });
 
     $(".token").on("dblclick", function(){
-      var tokenId = $(this).data("id");
-      $.post("tokens/"+tokenId+"/flip", function(){});
+      console.log($(this).data("flip"));
+      if($(this).data("flip") == true) {
+        var tokenId = $(this).data("id");
+        $.post("tokens/"+tokenId+"/flip", function(){});
+      }
     });
 
   });

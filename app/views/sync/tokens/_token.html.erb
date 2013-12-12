@@ -1,4 +1,6 @@
-<div class="token token<%= token.id %>" data-id="<%=token.id%>" style="position: absolute; top: <%= token.y_coordinate %>px; left: <%= token.x_coordinate %>px">
+<div class="token token<%= token.id %>" data-id="<%=token.id%>" data-flip="<%= token.flippable %>" style="position: absolute; top: <%= token.y_coordinate %>px; left: <%= token.x_coordinate %>px">
   <img src="<%= image_path(token.img_shown) %>">
-  <img src="<%= image_path(token.img_hidden) %>" style="visibility:hidden">
+  <% if token.flippable %>
+    <img src="<%= image_path(token.img_hidden) %>" style="visibility:hidden">
+  <% end %>
 </div>
