@@ -195,7 +195,10 @@ html, body {
 }
 
 .messages-box {
-  margin: 18px 18px 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 28%;
+  height: 72%;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
   overflow: auto;
