@@ -154,8 +154,9 @@ html, body {
 }
 
 .token {
-  height: 60;
-  width: 60;
+  height: 60px;
+  width: 60px;
+  overflow: hidden;
 }
 
 /*chat styling*/
