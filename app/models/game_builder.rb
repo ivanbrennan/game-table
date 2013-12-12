@@ -89,13 +89,36 @@ class GameBuilder < ActiveRecord::Base
       g.create_board(image: "backgammon_board.jpg")
     end
 
-    15.times do 
-      g.tokens.create(name: "backgammon", image_0:"test_token.png", image_1:"test_token.png",  x_coordinate: 10, y_coordinate:10, :flippable => false)
-    end
-    15.times do 
-      g.tokens.create(name: "backgammon", image_0:"test2.png", image_1:"test2.png", x_coordinate: 0, y_coordinate:0, :flippable => false)
-    end
-    #remember to put coordinates in there in the future
+    g.tokens.create(:name => "backgammon", :x_coordinate => 34, :y_coordinate => 25, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 410, :y_coordinate => 448, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 32, :y_coordinate => 80, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 410, :y_coordinate => 395, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 411, :y_coordinate => 558, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 410, :y_coordinate => 503, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 411, :y_coordinate => 613, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 610, :y_coordinate => 502, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 612, :y_coordinate => 560, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 612, :y_coordinate => 617, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 915, :y_coordinate => 244, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 915, :y_coordinate => 189, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 914, :y_coordinate => 135, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 913, :y_coordinate => 80, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 912, :y_coordinate => 26, :image_1 => "checker_red.png", :state => 0, :image_0 => "checker_red.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 911, :y_coordinate => 392, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 610, :y_coordinate => 81, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 610, :y_coordinate => 26, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 914, :y_coordinate => 614, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 411, :y_coordinate => 133, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 610, :y_coordinate => 137, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 408, :y_coordinate => 247, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 912, :y_coordinate => 505, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 408, :y_coordinate => 25, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 35, :y_coordinate => 557, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 911, :y_coordinate => 451, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 913, :y_coordinate => 560, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 410, :y_coordinate => 78, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 411, :y_coordinate => 189, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
+    g.tokens.create(:name => "backgammon", :x_coordinate => 35, :y_coordinate => 614, :image_1 => "checker_black.png", :state => 0, :image_0 => "checker_black.png", :flippable => false )
     g
   end
 
