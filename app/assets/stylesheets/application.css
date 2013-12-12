@@ -155,7 +155,6 @@ textarea {
   float: right;
   width: 250px;
   height: 100%;
-  background-color: rgba(245, 245, 245, 0.8);
   border: solid black 1px; /*for now*/
 }
 
