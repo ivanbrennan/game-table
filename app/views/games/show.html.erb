@@ -10,12 +10,14 @@
   </div> -->
 
   <div class="chat">
-    <h2>Chat</h2>
-    <% if @game.name == "backgammon" %>
-      <div class="dice-roll">
-        <%= link_to "Roll Dice!", "/games/roll/#{@game.secure_room_code}", method: "post", class: "btn btn-success btn-lg" %>
-      </div>
-    <% end %>
+    <div class="chat-header">
+      <h2>Chat</h2>
+      <% if @game.name == "backgammon" %>
+        <div class="dice-roll">
+          <%= link_to "Roll Dice!", "/games/roll/#{@game.secure_room_code}", method: "post", class: "btn btn-success btn-lg" %>
+        </div>
+      <% end %>
+    </div>
     <div class="messages-box">
       <ul id="chat">
         <% @game.messages.each do |message| %>
