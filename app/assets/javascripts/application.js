@@ -34,6 +34,8 @@ $(document).ready(function(){
     $(".loading-box").fadeOut('slow');
     $(".main-area").fadeIn('slow');
 
+    $(".alert-whatevs-im-tired").delay(2500).fadeOut('slow')
+
 
     $(".board").mousedown(function(){
       return false;
