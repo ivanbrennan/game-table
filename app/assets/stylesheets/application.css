@@ -157,8 +157,9 @@ textarea {
 }
 
 .token {
-  height: 60;
-  width: 60;
+  height: 60px;
+  width: 60px;
+  overflow: hidden;
 }
 
 /*chat styling*/
@@ -197,7 +198,10 @@ textarea {
 }
 
 .messages-box {
-  margin: 10px 10px 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 28%;
+  height: 72%;
   background-color: rgba(255, 255, 255, 0.6);
   overflow-y: scroll;
 }
