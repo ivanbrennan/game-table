@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20131211232956) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "source"
   end
 
   add_index "messages", ["game_id"], name: "index_messages_on_game_id"

@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+  // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
@@ -13,6 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
+//= require bootstrap.min
+//= require jquery.icheck.min
+//= require modernizr
+//= require placeholders.min
+//= require respond.min
+//= require Chart.min
 //= require sync
 //= require_tree .
 
@@ -45,6 +51,16 @@ $(document).ready(function(){
       var tokenId = $(this).data("id");
       var valuesToSubmit = "x_coordinate=" + x + "&y_coordinate="+ y;
       $.post("tokens/"+tokenId+"/move", valuesToSubmit, function(){});
+    });
+
+
+    $(".dice-roll a").click(function(){
+      var name = $("#message_name").val(); 
+
+      $.post($(".dice-roll a").attr("href"), "name="+name, function(){
+        $(".messages-box").scrollTop($(".messages-box")[0].scrollHeight);
+      });
+    return false;
     });
 
     $("form").submit(function(){

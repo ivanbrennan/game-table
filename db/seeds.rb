@@ -4,17 +4,20 @@
 
 Board.create!([
   { :image => "test_board.jpg", :game_id => 1, :created_at => "2013-12-09 21:17:57", :updated_at => "2013-12-09 21:17:57" },
-  { :image => "backgammon_board.jpg", :game_id => 2, :created_at => "2013-12-10 16:57:09", :updated_at => "2013-12-10 16:57:09"}
+  { :image => "backgammon_board.jpg", :game_id => 2, :created_at => "2013-12-10 16:57:09", :updated_at => "2013-12-10 16:57:09" },
+  { :image => "test_board.jpg", :game_id => 3, :created_at => "2013-12-11 22:40:39", :updated_at => "2013-12-11 22:40:39" },
+  { :image => "chinese_checkers.png", :game_id => 5, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:31:54" }
+
 ])
 
 
 
 Game.create!([
-  { :name => "Test", :created_at => "2013-12-09 21:16:28", :updated_at => "2013-12-09 21:16:28", :secure_room_code => Game.secure_room_code },
-  { :name => "backgammon", :created_at => "2013-12-10 16:57:50", :updated_at => "2013-12-10 16:57:50", :secure_room_code => Game.secure_room_code }
+  { :name => "checkers", :secure_room_code => "6100d8d6e7ea5a8b9d3497c85d4c540c", :game_builder_id => nil, :created_at => "2013-12-09 21:16:28", :updated_at => "2013-12-09 21:16:28" },
+  { :name => "backgammon", :secure_room_code => "2a86cc8c430c0b9c94f180af426d69f6", :game_builder_id => nil, :created_at => "2013-12-10 16:57:50", :updated_at => "2013-12-10 16:57:50" },
+  { :name => "chess", :secure_room_code => "34bb7c145a8a969cbc6980cf05cbe094", :game_builder_id => nil, :created_at => "2013-12-11 23:29:05", :updated_at => "2013-12-11 23:29:05" }
+  { :name => "chinese_checkers", :secure_room_code => "e20012be6c826a84053057fa39232247", :game_builder_id => nil, :created_at => "2013-12-11 23:31:54", :updated_at => "2013-12-11 23:31:54" }
 ])
-
-
 
 Token.create!([
   { :name => "Circle",     :x_coordinate => 243,  :y_coordinate => 169, :image_0 => "checkers_red_0.png",  :image_1 => "checkers_red_1.png",  :game_id => 1, :created_at => "2013-12-09 21:16:46", :updated_at => "2013-12-10 16:06:34" },
@@ -72,5 +75,3 @@ Token.create!([
   { :name => "backgammon", :x_coordinate => 917,  :y_coordinate => 449, :image_0 => "checkers_grey_0.png", :image_1 => "checkers_grey_1.png", :game_id => 2, :created_at => "2013-12-10 17:02:42", :updated_at => "2013-12-10 17:11:22" },
   { :name => "backgammon", :x_coordinate => 416,  :y_coordinate => 211, :image_0 => "checkers_grey_0.png", :image_1 => "checkers_grey_1.png", :game_id => 2, :created_at => "2013-12-10 17:02:43", :updated_at => "2013-12-10 17:10:41" }
 ])
-
-

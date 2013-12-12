@@ -1,1 +1,5 @@
-<li class="new-message"><strong><%= message.name %></strong>: <%= message.content %></li>
+
+ <li <% if message.source=="computer" %>
+  style="background-color: green;"
+  <% end %>
+  ><strong><%= message.name %></strong>: <%= message.content %></li>
