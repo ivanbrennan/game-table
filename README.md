@@ -1,3 +1,5 @@
+##[gametable.co](gametable.co)
+
 
 
 ####The Team
@@ -12,7 +14,7 @@ In order to incorporate asynchronous updates of both tokens movement and chat th
 
 
 ####Token movement 
-[JQuery UI](http://jqueryui.com/) dragabble and dragstop functions were used to both move the tokens and mark their placement back on the board. On every dragstop, the location of the board is saved as x/y coordinates in the database.
+[JQuery UI](http://jqueryui.com/) dragabble and dragstop functions are used to both move the tokens and mark their placement back on the board. On every dragstop, the location of the board is saved as x/y coordinates in the database.
 
     $(".token").on("dragstop", function(event, ui){
       var x = $(this).position().left;
@@ -21,6 +23,12 @@ In order to incorporate asynchronous updates of both tokens movement and chat th
       var valuesToSubmit = "x_coordinate=" + x + "&y_coordinate="+ y;
       $.post("tokens/"+tokenId+"/move", valuesToSubmit, function(){});
     });
+    
+Upon each token movement, sync removes the token from the board and then refreshes the partial for that token. Because of this, the javascript above needs to be applied a second time to each token after it has been moved to keep the draggable attribute working. 
+
+The flow of control moves as follows:
+
+	token momvement --> javascript action ---> token controller --> partial refresh
 
 ####Screen sharing 
 Each token is a partial that is synced via pusher to any other user sharing in that game.
@@ -96,13 +104,22 @@ and the route gets created dynamically
 
 ####Game play
 
-For games like checkers, where the pieces can change form during the game (e.g. getting kinged), the application has the following methodology 
+For games like checkers, where the pieces can change form during the game (e.g. getting kinged), the application implements a flipable function on each piece
 
 
+    $(".token").on("dblclick", function(){
+      if($(this).data("flip") == true) {
+        console.log($(this).data("flip"));
+        var tokenId = $(this).data("id");
+        $.post("tokens/"+tokenId+"/flip", function(){});
+      }
+    }); 
+
+Like token movements, the fliping a token causes the partial to refresh
 
 #### Setting the board
 
-seed_dump
+In order to get the tokens in the right places on each board, the tokens were placed manually and then the location was saved from the database using [seed_dump](https://github.com/rroblak/seed_dump) gem. Once the coordinates are caught from the database, they were then hardcoded into the GameBuilder model. 
 
 
 
@@ -112,8 +129,23 @@ spike
 
 
 ####DB maintenance 
-cron job using whenever gem 
+In order to keep the database in good shape, any game older then 1 week is dumped from the database using a chron job implemented through a the [whenever](https://github.com/javan/whenever) and [chronic](https://github.com/mojombo/chronic)gem.
+
+	every 1.day, :at => '12:00 am' do 
+  	  runner "Game.delete"
+	end
+
+This above code in the `schedule.rb` file fires off the following method in the `game.rb` model, which incorporates a custom sql call to match dates from with the database
+	
+	  def self.delete
+    	Game.where("created_at <= ?", Chronic.parse("one week ago")).destroy
+  	end
+
+Do to dependencies in the models, the deletion of a game deletes all the corresponding tokens and boards from the database.
 
 ####Front end styling 
 
-style/eternity 
+Styling was accomplished using bootstrap as well as a lot of custom javascript and css on the game show page. 
+
+#####Conclusion
+Modular platform for any sort of board game. THe games here are a proof of concept. The next step is to allow users to upload different tokens, boards, and even completely new types of games that rely on this shared architecture. 
