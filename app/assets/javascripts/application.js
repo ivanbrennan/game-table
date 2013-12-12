@@ -68,7 +68,9 @@ $(document).ready(function(){
 
     $(".token").on("dblclick", function(event, ui){
       console.log("dblclicked");
-      $(this).toggle();
+      $.post("tokens/"+tokenId+"/flip", "", function(){});
+    });
+
     });
 
   });
