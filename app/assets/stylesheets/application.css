@@ -11,9 +11,8 @@
  *= require bootstrap.min
  *= require animate.min
  *= require font-awesome.min
- *= require forms
- * require_self
- *= require site
  *= require jquery.ui.all
+ *= require forms
+ *= require site
  *= require_tree .
  */

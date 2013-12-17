@@ -26,7 +26,7 @@
 .index-total {
   height: 100%;
   width: auto;
-  background: asset-url("chinese_checkers_bg.jpg") no-repeat center center fixed #000; 
+  background: url("chinese_checkers_bg.jpg") no-repeat center center fixed #000; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -115,7 +115,7 @@ html, body {
   width: auto;
   height: 100%;
   margin-right: 250px;
-  background: green image-url('green_felt.jpg') center;
+  background: green url('green_felt.jpg') center;
   text-align: center;
   position: relative;
   overflow: scroll;
@@ -154,7 +154,7 @@ html, body {
   width: 250px;
   height: 100%;
   /*background-color: rgba(245, 245, 245, 0.8);*/
-  background: grey image-url('wood-texture.jpg') center;
+  background: grey url('wood-texture.jpg') center;
   border: solid black 1px; /*for now*/
 }
 
