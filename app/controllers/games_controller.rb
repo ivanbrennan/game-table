@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :reset]
+  before_action :set_game, only: [:show, :reset, :email]
 
   def index
     @games = Game.all
@@ -24,6 +24,11 @@ class GamesController < ApplicationController
   def chinese_checkers
     @chinese_checkers = GameBuilder.build_chinese_checkers
     redirect_to game_path(@chinese_checkers.secure_room_code)
+  end
+
+  def email
+    GameMailer.game_email(@game, params[:email]).deliver
+    redirect_to :back
   end
 
   def reset
