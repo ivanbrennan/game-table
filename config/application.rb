@@ -13,8 +13,7 @@ Bundler.require(:default, Rails.env)
 
 module GameTable
   class Application < Rails::Application
-    config.assets.precompile += %w( glyphicons-halflings-regular.eot glyphicons-halflings-regular.woff glyphicons-halflings-regular.truetype glyphicons-halflings-regular.svg glyphicons-halflings-regular.ttf)
-    config.assets.precompile += %w(  )
+    config.assets.precompile += %w( glyphicons-halflings-regular.eot glyphicons-halflings-regular.woff glyphicons-halflings-regular.truetype glyphicons-halflings-regular.svg glyphicons-halflings-regular.ttf )
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
