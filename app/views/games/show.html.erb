@@ -63,7 +63,7 @@
           <span class="caret"></span>
         </a>
       <ul class="dropdown-menu">
-        <li><%= link_to "Reset Game", reset_path(@game.secure_room_code), confirm: "Are you sure?" %></li>
+        <li><%= link_to "Reset Game", reset_path(@game.secure_room_code), data: { confirm: "Are you sure?" } %></li>
         <li><%= link_to "Home", root_path %></li>
       </ul>
     </div>
