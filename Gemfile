@@ -51,6 +51,9 @@ gem 'rvm-capistrano'
 gem 'pusher'
 gem 'sync'
 
+# Javascript runtime
+gem 'execjs'
+
 # Whenever allows a cron job to be run
 gem 'whenever', :require => false
 

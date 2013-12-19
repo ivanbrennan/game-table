@@ -244,6 +244,7 @@ DEPENDENCIES
   chronic
   coffee-rails (~> 4.0.0)
   database_cleaner
+  execjs
   factory_girl_rails
   guard (>= 2.1.0)
   guard-rspec
